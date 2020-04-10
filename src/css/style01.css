@@ -1,0 +1,38 @@
+/* 在webpack配置中开启了css模块化以后， 如果想要将某个类名暴露到全局中去，使用 :global() 将类名包裹住  */
+
+:global(.div) {
+	color: blue;
+	font-size: 25px;
+}
+.name {
+	color: red;
+	font-size: 30px;
+	font-style: italic;
+}
+.div {
+	color: purple;
+	font-size: 25px;
+	font-style: italic;
+}
+
+/* 以上两个 .div 不会出现命名冲突，因为 私有的 .div 会以乱码的形式（被重命名了）在标签中出现 （可以审查元素查看） */
+
+
+/* 	:global(.test) {}：使类名不被模块化
+	:local(.test) {}：使类名模块化，默认是这样的
+
+ */
+
+
+ .box {
+ 	color: red;
+ 	font-size: 25px;
+ 	.name {
+ 		color: blue;
+ 		font-size: 20px;
+ 		span {
+ 			color: pink;
+ 			display: inline-block;
+ 		}
+ 	}
+ }

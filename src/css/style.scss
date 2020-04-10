@@ -1,0 +1,8 @@
+.title {
+	color: pink;
+	font-size: 28px;
+}
+/* css-loader?modules: 对普通的css开启模块化，但是模块化只对 class类选择器，id选择器生效，标签选择器不会生效 */
+div {
+	font-style: italic;
+}

@@ -1,0 +1,27 @@
+.sea {
+	font-size: 30px;
+	color: red;
+	font-style: italic;
+	background: pink;
+	.name {
+		font-style: normal;
+		font-size: 20px;
+		color: blue;
+		background-color: lightblue;
+	}
+}
+.river {
+	font-size: 25px;
+	color: purple;
+	font-style: italic;
+	background: #fff;
+	.name {
+		font-style: normal;
+		font-size: 18px;
+		color: green;
+		background-color: orange;
+	}
+}
+
+
+
