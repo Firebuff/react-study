@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
+import PropTypes from 'prop-types'
+
 
 // 引入 style 
 
@@ -18,8 +20,19 @@ class Hi extends React.Component {
         super()
     }
 
+    // 如果不传参数，就设置默认值
+    static defaultProps = {
+        title: 'hi'
+    }
+
+    // 设置类型校验
+    static propTypes = {
+        title: PropTypes.string
+    }
+
     render () {
         return <div>
+            <h3>{this.props.title}</h3>
             <ul>
                 <li>
                     <span>what are you doing?</span>
@@ -39,6 +52,8 @@ class Hi extends React.Component {
 
 ReactDom.render(<div>
 
-        <Hi></Hi>
+        <Hi title={'1222'}></Hi>
     </div>, document.getElementById('app'))
+
+
 

@@ -54,3 +54,4 @@ class Plant extends React.Component {
 }
 
 export default Plant
+
