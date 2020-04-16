@@ -11,6 +11,6 @@ ReactDOM.render(
 ,document.getElementById('app'))
 */
 
-import '@/components/practice/practice02.js'
+import '@/components/routers/index'
 
 
