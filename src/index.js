@@ -11,6 +11,6 @@ ReactDOM.render(
 ,document.getElementById('app'))
 */
 
-import '@/components/routers/index'
+import '@/components/routers/index03.jsx'
 
 
