@@ -1,9 +1,11 @@
 import React from 'react'
 
-import { BrowserRouter as Router, Link, Route } from "react-router-dom"
+import { BrowserRouter as Router, Link, Route, useRouteMatch } from "react-router-dom"
 
 
 function Hi (props) {
+	let match = useRouteMatch();
+	console.log(match)
 	return <p> say hi to me </p>
 }
 

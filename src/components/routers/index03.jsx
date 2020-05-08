@@ -54,16 +54,46 @@ function Home () {
     )
 }
 
-function About () {
+function About ({match}) {
    
     let location = useLocation();
    
-    // console.log(location)
+    console.log(location)
+    console.log('about')
+
+   console.log(match)
   
     return (
         <div>about</div>
     )
 }
+
+/*class About extends React.Component {
+    constructor (props) {
+        super(props)
+    }
+
+    render () {
+        console.log('fggg')
+        console.log(this.props)
+        return (
+            <div>about</div>
+        )
+    }
+
+ 
+}*/
+
+
+
+
+
+
+
+
+
+
+
 
 function BlogPost() {
     let match = useRouteMatch();
@@ -178,7 +208,7 @@ function App () {
                         <Home></Home>
                     </Route>   
                     <Route path="/about">
-                       <About></About>
+                       <About hi="dgd"></About>
                     </Route>
                     <Route path="/btn">
                        <HomeButton></HomeButton>
@@ -195,6 +225,13 @@ function App () {
                         return <div>hello, blog</div>
                     }} >
                        
+                    </Route>
+
+
+                    <Route children = { ({match, location, history}) => {
+                        console.log(match, location, history)
+                        return <li>5555</li>
+                    }}>
                     </Route>
                 </div>
             </div>

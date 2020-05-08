@@ -11,6 +11,6 @@ ReactDOM.render(
 ,document.getElementById('app'))
 */
 
-import '@/components/routers/index03.jsx'
+import '@/redux/index02.js'
 
 
