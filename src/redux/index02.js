@@ -41,7 +41,7 @@ const store = createStore(counter, composeWithDevTools(applyMiddleware(thunk)))
 
 
 // action类型
-function plus () {
+function plus (val) {
 
 
 	// return { type: 'PLUS', number: 20 }
@@ -49,7 +49,7 @@ function plus () {
 	// 使用redux-thunk 后， action可以返回一个函数
 	return function (dispatch) {
 		setTimeout(() => {
-			dispatch({ type: 'PLUS', number: 20 })
+			dispatch({ type: 'PLUS', number: val })
 			
 		}, 1000) 
 	}
@@ -69,13 +69,15 @@ let a = { plus, minus } // { plus: function, minus: function }
 
 
 
-function mapDispatchToProps (dispatch) {
+/*function mapDispatchToProps (dispatch) {
 	// return bindActionCreators( { plus, minus }, dispatch)
 	return {
 		plus: () => {dispatch (plus())},
 		minus: () => {dispatch(minus())}
 	}
 }
+*/
+
 
 
 
@@ -87,7 +89,7 @@ class Counter extends React.Component {
 		let { minus, plus, count } = this.props
 		return (
 			<div>
-				<button onClick={ plus }>+</button>
+				<button onClick={ () => { plus(100) } }>+</button>
 				
 				<span> {count} </span>
 
@@ -99,7 +101,10 @@ class Counter extends React.Component {
 }
 
 
-const ConnectCounter  = connect(mapStateToProps, mapDispatchToProps)(Counter)
+// const ConnectCounter  = connect(mapStateToProps, mapDispatchToProps)(Counter)
+
+const ConnectCounter  = connect(mapStateToProps, {plus, minus})(Counter) //第二个参数也可以直接传递一个对象(对象的属性值必须是一个函数），他会自动调用 bindActionCreators
+
 
 
 class ReduxSample extends React.Component {
